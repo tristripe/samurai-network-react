@@ -6,3 +6,6 @@
 
 
 Запуск: npm run build
+
+
+Стек: react-create-app, redux, react-redux, thunk
