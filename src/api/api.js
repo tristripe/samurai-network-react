@@ -41,5 +41,3 @@ export const usersAPI = {
     }
 
 }
-
-git@github.com:tristripe/react-samurai-network.git
