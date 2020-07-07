@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,3 +67,16 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+=======
+# react-samurai-network
+Учебный проект по реакт, создаваемый по курсам
+
+
+Инициализия: npm i
+
+
+Запуск: npm run build
+
+
+Стек: react-create-app, redux, react-redux, thunk
+>>>>>>> a89bdbe53703d123f6a1d7d5dabaf0d02944b894
