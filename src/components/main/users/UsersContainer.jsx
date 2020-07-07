@@ -2,7 +2,7 @@ import React from "react";
 import {connect} from "react-redux";
 import {
     follow, getUsersThunkCreator,
-    setCurrentPage, toggleFollowingProgress,
+    setCurrentPage,
     unfollow
 } from "../../../redux/usersReducer";
 import Users from "./users";
@@ -47,7 +47,7 @@ let mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps, {
-    follow, unfollow, setCurrentPage, toggleFollowingProgress,
+    follow, unfollow, setCurrentPage,
     getUsersThunkCreator
 })
 (UsersContainer);
