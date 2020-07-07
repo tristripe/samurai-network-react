@@ -1,0 +1,25 @@
+.aside {
+  padding: 10px;
+  background-color: $white;
+  grid-row-start: 2;
+  grid-column-start: 2;
+  grid-column-end: 3;
+
+  nav {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      color: $dark-green;
+      text-decoration: none;
+      margin-bottom: 10px;
+      transition: 0.3s;
+      padding: 5px;
+
+      &:hover {
+        background-color: $lightest-green-hover;
+        color: $white;
+      }
+    }
+  }
+}

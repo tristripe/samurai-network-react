@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Aside from "./components/aside/Aside";
+import Head from "./components/Head";
+import Main from "./components/main/Main";
+import {BrowserRouter} from "react-router-dom";
+import HeaderContainer from "./components/header/HeaderContainer";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const App = (props) => {
+
+    return (
+        <BrowserRouter>
+            <div className="app-wrapper">
+                <Head/>
+                <HeaderContainer/>
+                <Aside state={props.state.sidebar.friends}/>
+                <Main state={props.state}
+                      store={props.store}/>
+            </div>
+        </BrowserRouter>
+    );
 }
 
 export default App;

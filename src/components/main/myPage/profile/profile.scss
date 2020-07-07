@@ -1,0 +1,14 @@
+.profile {
+}
+
+.profile__data {
+  color: $half-transparent-gray;
+}
+
+.profile__image {
+  background-color: $lightest-green;
+  display: inline-block;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0px 30px 20px rgba(26, 26, 26, 0.25);
+}

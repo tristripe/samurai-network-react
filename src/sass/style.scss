@@ -1,0 +1,15 @@
+@import 'general/normalize';
+@import 'general/variables';
+@import 'general/layout';
+@import 'general/mixins';
+
+// Components
+
+@import '../components/header/header';
+@import '../components/aside/aside';
+@import '../components/main/myPage/profile/profile';
+@import '../components/main/myPage/posts/createPost/create-post';
+@import '../components/main/messages/Messages';
+@import '../components/main/messages/dialogList/dialog-list';
+@import '../components/aside/friends/friends';
+@import '../components/main/users/users';

@@ -1,0 +1,45 @@
+.dialog-list {
+  display: flex;
+  align-items: center;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 200px;
+
+    li a {
+      display: flex;
+
+      p {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.dialog-list__message {
+  display: flex;
+  align-items: center;
+
+  .dialog-list__avatar {
+    margin-right: 15px;
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  &--your {
+    .dialog-list__avatar {
+      order: 1;
+      margin-right: 0;
+      margin-left: 15px;
+    }
+
+    p {
+      order: 0;
+    }
+  }
+}
+
+
