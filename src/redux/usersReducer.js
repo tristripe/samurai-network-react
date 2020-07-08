@@ -82,11 +82,11 @@ export const getUsersThunkCreator = (currentPage, pageSize) => {
     return (dispatch) => {
 
         dispatch(toggleIsLoading(true));
-
         usersAPI.getUsers(currentPage, pageSize).then(data => {
             dispatch(toggleIsLoading(false));
             dispatch(setUsers(data.items));
             dispatch(setTotalUsersCount(data.totalCount));
+            dispatch(setCurrentPage(currentPage));
         });
     }
 }
@@ -95,8 +95,8 @@ export const follow = (userId) => {
     return (dispatch) => {
         dispatch(toggleFollowingProgress(true, userId));
         usersAPI.followUser(userId)
-            .then(data => {
-                if (data.resultCode === 0) {
+            .then(response => {
+                if (response.data.resultCode === 0) {
                     dispatch(followSuccess(userId));
                 }
                 dispatch(toggleFollowingProgress(false, userId));
@@ -109,8 +109,8 @@ export const unfollow = (userId) => {
     return (dispatch) => {
         dispatch(toggleFollowingProgress(true, userId));
         usersAPI.unfollowUser(userId)
-            .then(data => {
-                if (data.resultCode === 0) {
+            .then(response => {
+                if (response.data.resultCode === 0) {
                     dispatch(unfollowSuccess(userId));
                 }
                 dispatch(toggleFollowingProgress(false, userId));
