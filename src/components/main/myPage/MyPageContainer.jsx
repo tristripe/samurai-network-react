@@ -2,7 +2,9 @@ import React from "react";
 import MyPage from "./MyPage";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
-import {getUserProfile} from "../../../redux/myPageReducer";
+import {getStatus, getUserProfile, updateStatus} from "../../../redux/myPageReducer";
+import {withAuthRedirect} from "../../../hoc/winthAuthRedirect";
+import {compose} from "redux";
 
 class MyPageContainer extends React.Component {
 
@@ -12,19 +14,24 @@ class MyPageContainer extends React.Component {
             userId = 2;
         }
         this.props.getUserProfile(userId);
+        this.props.getStatus(userId);
     }
 
     render() {
         return (
-                <MyPage {...this.props} profile={this.props.profile} />
+                <MyPage {...this.props} profile={this.props.profile} status={this.props.status} updateStatus={this.props.updateStatus}/>
         )
     }
 }
 
+
+
 let mapStateToProps = (state) => ({
-   profile: state.myPage.profile
+    profile: state.myPage.profile,
+    status: state.myPage.status
 });
 
-let WithUrlDataContainerComponent = withRouter(MyPageContainer)
-
-export default connect(mapStateToProps, {getUserProfile}) (WithUrlDataContainerComponent);
+export default compose(
+    connect (mapStateToProps, {getUserProfile, getStatus, updateStatus}),
+    withRouter,
+)(MyPageContainer);

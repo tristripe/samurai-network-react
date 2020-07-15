@@ -16,6 +16,7 @@ const App = (props) => {
                 <Aside state={props.state.sidebar.friends}/>
                 <Main state={props.state}
                       store={props.store}/>
+
             </div>
         </BrowserRouter>
     );
