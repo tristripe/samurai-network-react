@@ -3,7 +3,6 @@ import MyPage from "./MyPage";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 import {getStatus, getUserProfile, updateStatus} from "../../../redux/myPageReducer";
-import {withAuthRedirect} from "../../../hoc/winthAuthRedirect";
 import {compose} from "redux";
 
 class MyPageContainer extends React.Component {
