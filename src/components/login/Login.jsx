@@ -20,6 +20,12 @@ const LoginForm = (props) => {
                 <Field component="input" name="rememberMe" type="checkbox"/>
                 Remember me
             </div>
+            {   props.error &&
+                    <div className={"form-error"}>
+                        {props.error}
+                    </div>
+            }
+
             <div>
                 <button type={"submit"}>Submit</button>
             </div>

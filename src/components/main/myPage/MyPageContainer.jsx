@@ -10,7 +10,10 @@ class MyPageContainer extends React.Component {
     componentDidMount() {
         let userId = this.props.match.params.userId;
         if (!userId) {
-            userId = 2;
+            userId = this.props.authorizedUserId;
+            if (!userId) {
+                this.props.history.push("/login")
+            }
         }
         this.props.getUserProfile(userId);
         this.props.getStatus(userId);
@@ -27,7 +30,9 @@ class MyPageContainer extends React.Component {
 
 let mapStateToProps = (state) => ({
     profile: state.myPage.profile,
-    status: state.myPage.status
+    status: state.myPage.status,
+    authorizedUserId: state.auth.id,
+    isAuth: state.auth.isAuth
 });
 
 export default compose(
