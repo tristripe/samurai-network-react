@@ -78,7 +78,7 @@ export const toggleIsLoading = (isLoading) => ({type: TOGGLE_IS_LOADING, isLoadi
 export const toggleFollowingProgress = (isLoading, userId) => ({type: FOLLOWING_IN_PROGRESS, isLoading, userId})
 
 
-export const getUsersThunkCreator = (currentPage, pageSize) => {
+export const requestUsers = (currentPage, pageSize) => {
     return (dispatch) => {
 
         dispatch(toggleIsLoading(true));
@@ -99,9 +99,9 @@ export const follow = (userId) => {
                 if (response.data.resultCode === 0) {
                     dispatch(followSuccess(userId));
                 }
-                dispatch(toggleFollowingProgress(false, userId));
+            dispatch(toggleFollowingProgress(false, userId));
             });
-    }
+        }
 }
 
 
