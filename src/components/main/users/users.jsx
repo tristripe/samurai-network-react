@@ -18,8 +18,10 @@ let Users = (props) => {
                 {pages.map(p => {
                     return (
                         <li>
-                            <span className={props.currentPage === p && 'active'} onClick={(e) => {
-                                props.onPageChanged(p)
+                            <span
+                                className={props.currentPage === p && 'active'}
+                                onClick={(e) => {
+                                    props.onPageChanged(p)
                             }}>
                                 {p}
                             </span>
